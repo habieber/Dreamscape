@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import * as notesAPI from '../../utilities/notes-api'
 import './NewDreamPage.css'
-import OpenAI from 'openai';
 
 export default function NewDreamPage ({ user }) {
     const [image_url, setImage_url] = useState('/')
@@ -9,7 +8,6 @@ export default function NewDreamPage ({ user }) {
     const [loading, setLoading] = useState(false)
 
     const default_img = 'https://as1.ftcdn.net/v2/jpg/01/78/32/42/1000_F_178324261_vmmNtnD12a8VMhhjLicFdfLVIRE3DZEy.jpg'
-
 
 
     const imageGenerator = async () => {
@@ -25,6 +23,14 @@ export default function NewDreamPage ({ user }) {
         setImage_url(data)
         setLoading(false)
     }
+
+    async function handleSaveDream() {
+        if (inputRef.current.value === '') {
+            return 0;
+        }
+        const text = inputRef.current.value
+        const addDream = await notesAPI.addNote({text})
+    }
     
     return (
         <>
@@ -36,7 +42,7 @@ export default function NewDreamPage ({ user }) {
                         <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
                         <div className={loading ? "loading-text" : "display-none"}>Loading...</div>
                     </div>
-                    
+                    <div className={image_url === '/' ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</div>
                     <div className="search-box">
                         <input type="text" ref={inputRef} className='search-input' placeholder='describe your dream' />
                         <div className='generate-btn' onClick={()=>{imageGenerator()}}>Generate</div>
