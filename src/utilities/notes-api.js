@@ -1,6 +1,10 @@
 import sendRequest from "./send-request";
 
-const BASE_URL = '/api/notes';
+const BASE_URL = '/api/dreams';
+
+export async function getImage(prompt) {
+    return sendRequest(`${BASE_URL}/image`, 'POST', prompt)
+}
 
 export function addNote(text) {
     return sendRequest(BASE_URL, 'POST', text);

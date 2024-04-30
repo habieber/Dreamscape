@@ -33,7 +33,7 @@ app.listen(port, function() {
 app.use('/api/users', require('./routes/api/users'));
 
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/notes', require('./routes/api/notes'));
+app.use('/api/dreams', require('./routes/api/dreams'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import { getUser } from '../../utilities/users-services'
 import AllNotesPage from '../AllNotesPage/AllNotesPage';
+import NewDreamPage from '../NewDreamPage/NewDreamPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -14,8 +15,9 @@ export default function App() {
         <>
           <NavBar user={user.name} setUser={setUser}/>
           <Routes>
-            <Route path="notes" element={<AllNotesPage user={user} />} />
-        </Routes>
+            <Route path="dreams" element={<AllNotesPage user={user} />} />
+            <Route path="new" element={<NewDreamPage user={user} />} />
+          </Routes>
         </>
         :
         <AuthPage setUser={setUser} />

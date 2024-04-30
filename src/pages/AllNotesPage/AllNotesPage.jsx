@@ -11,7 +11,7 @@ export default function AllNotesPage ({ user }) {
             const notes = await notesAPI.getAllNotes();
             setAllNotes(notes);
         } catch (error) {
-            console.error('Error fetching notes:', error);
+            console.error('Error fetching dreams:', error);
         }
     }
 
@@ -39,7 +39,7 @@ export default function AllNotesPage ({ user }) {
                 </form>
             </div>
             <hr />         
-            <h1>{user.name}'s Notes</h1>
+            <h1>{user.name}'s Dreams</h1>
             {allNotes.length ?
                 <ul>
                     {allNotes.map(note => (
