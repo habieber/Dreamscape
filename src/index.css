@@ -3,14 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #282144;
-  --orange: #319171;
+  --blue-grey: rgb(107, 112, 109);
+  --plum: #5d3e50;
+  --tan: #E7E2DD;
+  --primary-dark: #282144;
+  --primary-light: #66599b;
   --text-light: #968c84;
   --text-dark: #615954;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth
+  }
+
+  body {
+    @apply font-[Helvetica]
+  }
+
+  li {
+    @apply p-4 text-sm
+  }
+
+  button {
+    @apply px-4 py-2 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white
+  }
+
+  h1 {
+    @apply text-xl font-bold
+  }
 }
 
 *, *:before, *:after {
@@ -19,12 +40,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--primary-dark);
   padding: 2vmin;
   height: 100vh;
 }
@@ -72,9 +88,9 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
+  background-color: var(--plum);
   color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin;
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
@@ -86,14 +102,14 @@ code {
   align-items: center;
   justify-content: center;
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: var(--plum);
+  border: .1vmin;
   border-radius: 1vmin;
   width: 70vh;
 }
 
 p.error-message {
-  color: var(--orange);
+  color: var(--primary-light);
   text-align: center;
 }
 
@@ -113,7 +129,7 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin;
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
@@ -121,19 +137,19 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--primary-light);
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: var(--primary-light);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid var(--tan);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -151,7 +167,7 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--primary-dark);
 }
 
 button[type="submit"] {

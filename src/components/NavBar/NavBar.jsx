@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import * as userService from '../../utilities/users-services'
-// import { FaFacebookF } from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
@@ -11,19 +11,29 @@ export default function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
-      <nav>
+    <div className="w-full min-h-[15px] flex justify-between items-center absolute z-10 text-white bg-gray-700/80">
+      <ul className="hidden sm:flex px-4">
         {user && (
           <>
+          <li>
             <Link to="/">All Dreams</Link>
-            &nbsp; | &nbsp;
-            <Link to="/new">New Dream</Link>
-            &nbsp; | &nbsp;
+          </li>
+          <li>
+          <Link to="/new">New Dream</Link>
+          </li>  
+          <li>
             <span>Hello, {user}</span>
-            &nbsp; | &nbsp;
-            <Link to="" onClick={handleLogOut}>Log Out</Link>
-            {/* <FaFacebookF /> */}
+          </li>          
+          <li>
+          <Link to="">Log Out</Link>
+          </li>       
           </>
-        )}
-      </nav>
+        )} 
+      <div>
+        <FaBars />
+      </div>
+      </ul>
+    </div>
+
   )
 }
