@@ -14,7 +14,11 @@ export async function getAllNotes() {
     return sendRequest(BASE_URL);
 }
 
+export async function deleteNote(noteId) {
+    return sendRequest(`${BASE_URL}/${noteId}`, 'DELETE')
+}
+
 //this function isn't used in sei cafe - just a reminder of RESTful routing
-export function getById(id) {
-    return sendRequest(`${BASE_URL}/${id}`);
+export function getById(noteId) {
+    return sendRequest(`${BASE_URL}/${noteId}`);
 }

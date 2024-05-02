@@ -1,5 +1,6 @@
 import './AllNotesPage.css';
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom"
 import * as notesAPI from '../../utilities/notes-api'
 
 export default function AllNotesPage ({ user }) {
@@ -30,6 +31,15 @@ export default function AllNotesPage ({ user }) {
         setText({[evt.target.name]: evt.target.value});
     }
     
+    async function handleDeleteNote (noteId) {
+        try {
+            await notesAPI.deleteNote(noteId);
+            setAllNotes(allNotes.filter(note => note._id !== noteId));
+        } catch (err) {
+            console.error('Error deleting note:', err)
+        }
+    }
+
     return (
         <>
             <div className='form-container'>
@@ -43,7 +53,11 @@ export default function AllNotesPage ({ user }) {
             {allNotes.length ?
                 <ul>
                     {allNotes.map(note => (
-                        <li key={note._id}>{note.createdAt}: {note.text}</li>
+                        <li key={note._id}>{note.createdAt}: {note.text} 
+                        {/* <button><Link to={{ pathname: `/show/${note._id}`, state: { noteId: note._id } }}>Details</Link></button> */}
+                        <button><Link to={`/${note._id}`}>Details</Link></button>
+                        <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                        </li>
                     ))}
                 </ul>
                 :

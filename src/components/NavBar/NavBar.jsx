@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       <nav>
         {user && (
           <>
-            <Link to="/dreams">All Dreams</Link>
+            <Link to="/">All Dreams</Link>
             &nbsp; | &nbsp;
             <Link to="/new">New Dream</Link>
             &nbsp; | &nbsp;
