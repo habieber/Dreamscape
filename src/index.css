@@ -10,6 +10,7 @@
   --primary-light: #66599b;
   --text-light: #968c84;
   --text-dark: #615954;
+  --test-bg: rgba(40, 33, 68, 0.3);
 }
 
 @layer base {
@@ -34,68 +35,15 @@
   }
 }
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
-}
+} */
 
 body {
-  margin: 0;
-  background-color: var(--primary-dark);
-  padding: 2vmin;
-  height: 100vh;
+  background-color: var(--test-bg);
+  /* height: 100vh; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#root {
-  height: 100%;
-}
-
-.align-ctr {
-  text-align: center;
-}
-
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
-
-.scroll-y {
-  overflow-y: scroll;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--plum);
-  color: var(--text-dark);
-  border: .1vmin;
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
-}
 
 .form-container {
   display: flex;
@@ -116,24 +64,22 @@ p.error-message {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25vmin;
+  gap: 2vmin;
   color: var(--text-light);
 }
 
-label {
+/* label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
-}
+} */
 
 input {
-  padding: 1vmin;
+  padding: 5vmin;
   font-size: 2vmin;
   border: .1vmin;
   border-radius: .5vmin;
   color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
 }
 
 input:focus {
@@ -153,26 +99,6 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
-}
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
-}
-
-button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--primary-dark);
-}
-
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
 }
 
 h1 {

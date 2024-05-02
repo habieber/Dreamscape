@@ -7,7 +7,7 @@ import { getUser } from '../../utilities/users-services'
 import AllNotesPage from '../AllNotesPage/AllNotesPage';
 import NewDreamPage from '../NewDreamPage/NewDreamPage';
 import DreamDetailPage from '../DreamDetailPage/DreamDetailPage'
-import { getById } from '../../utilities/notes-api';
+import Hero from '../../components/Hero/Hero';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -25,6 +25,7 @@ export default function App() {
         :
         <AuthPage setUser={setUser} />
       }
+      <Hero />
     </main>
   );
 }

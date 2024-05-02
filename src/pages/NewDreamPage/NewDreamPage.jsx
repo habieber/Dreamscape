@@ -7,7 +7,7 @@ export default function NewDreamPage ({ user }) {
     let inputRef = useRef(null)
     const [loading, setLoading] = useState(false)
 
-    const default_img = 'https://as1.ftcdn.net/v2/jpg/01/78/32/42/1000_F_178324261_vmmNtnD12a8VMhhjLicFdfLVIRE3DZEy.jpg'
+    const default_img = 'https://th.bing.com/th/id/OIG3.mrzboNyzN9SAtffiVH46?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
 
 
     const imageGenerator = async () => {

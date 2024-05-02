@@ -48,20 +48,24 @@ export default function AllNotesPage ({ user }) {
                     <button className='button btn-sm' type="submit">Add Note</button>
                 </form>
             </div>
-            <hr />         
-            <h1>{user.name}'s Dreams</h1>
-            {allNotes.length ?
-                <ul>
-                    {allNotes.map(note => (
-                        <li key={note._id}>{note.createdAt}: {note.text} 
-                        <button><Link to={`/${note._id}`}>Details</Link></button>
-                        <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
-                        </li>
-                    ))}
-                </ul>
-                :
-                <p>No notes available.</p>
-            }
+            <hr />
+            <div className='form-container'>
+                <h1>{user.name}'s Dreams</h1>
+                {allNotes.length ?
+                    <ul>
+                        {allNotes.map(note => (
+                            <li key={note._id}>{note.createdAt}: {note.text} 
+                            <button><Link to={`/${note._id}`}>Details</Link></button>
+                            <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                    :
+                    <p>No notes available.</p>
+                }            
+            </div>         
+
+
         </>
 
     )

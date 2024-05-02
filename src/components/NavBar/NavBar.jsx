@@ -8,6 +8,8 @@ export default function NavBar({ user, setUser }) {
   const [nav, setNav] = useState(false)
 
   const handleNav = () => {
+    console.log('handlenav')
+    console.log(nav)
     setNav(!nav)
   }
 
@@ -35,7 +37,8 @@ export default function NavBar({ user, setUser }) {
           </li>       
           </>
         )} 
-      <div onClick={handleNav} className="sm: z-10">
+      </ul>
+      <div onClick={handleNav} className="sm:hidden z-10">
         <FaBars size={20} className="mr-4 cursor-pointer" />
       </div>
       <div 
@@ -47,18 +50,17 @@ export default function NavBar({ user, setUser }) {
             <a href="/">Home</a>
           </li>
           <li className="text-2xl py8">
-            <a href="#index">All Dreams</a>
+            <a href="#index">My Dreams</a>
           </li>
           <li className="text-2xl py8">
-            <a href="/">Home</a>
+            <a href="/">New Dream</a>
           </li>
           <li className="text-2xl py8">
-            <a href="/">Home</a>
+            <a href="/">Logout</a>
           </li>
         </ul>
       </div>
-      </ul>
+      
     </div>
-
   )
 }
