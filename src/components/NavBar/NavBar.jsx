@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import * as userService from '../../utilities/users-services'
+// import { FaFacebookF } from 'react-icons/fa'
 import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
@@ -20,6 +21,7 @@ export default function NavBar({ user, setUser }) {
             <span>Hello, {user}</span>
             &nbsp; | &nbsp;
             <Link to="" onClick={handleLogOut}>Log Out</Link>
+            {/* <FaFacebookF /> */}
           </>
         )}
       </nav>

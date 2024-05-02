@@ -17,4 +17,7 @@ router.post('/image', dreamsCtrl.getImage);
 // DELETE /api/dreams/:id
 router.delete('/:id', dreamsCtrl.delete);
 
+//PUT /api/dreams/:id
+router.put('/:id', dreamsCtrl.update);
+
 module.exports = router;

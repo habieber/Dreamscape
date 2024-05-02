@@ -54,7 +54,6 @@ export default function AllNotesPage ({ user }) {
                 <ul>
                     {allNotes.map(note => (
                         <li key={note._id}>{note.createdAt}: {note.text} 
-                        {/* <button><Link to={{ pathname: `/show/${note._id}`, state: { noteId: note._id } }}>Details</Link></button> */}
                         <button><Link to={`/${note._id}`}>Details</Link></button>
                         <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
                         </li>

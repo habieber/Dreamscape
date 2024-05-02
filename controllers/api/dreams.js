@@ -7,6 +7,7 @@ module.exports = {
     index,
     getImage,
     delete: deleteDream,
+    update,
 }
 
 const openai = new OpenAI({
@@ -41,7 +42,6 @@ async function create(req, res) {
 
 async function deleteDream(req, res) {
     try {
-        console.log('inside delete ctrl func')
         const dream = await Dream.findByIdAndDelete(req.params.id)
         if (!dream) {
             return res.status(404).json({ message: 'Dream not found' });
@@ -59,7 +59,11 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    console.log(req.params.id)
     const dream = await Dream.findById(req.params.id)
     res.json(dream)
+}
+
+async function update(req, res) {
+    const updatedDream = await Dream.findByIdAndUpdate(req.params.id, { text: req.body.editedText}, { new: true })
+    res.json(updatedDream)
 }

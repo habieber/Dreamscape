@@ -18,7 +18,10 @@ export async function deleteNote(noteId) {
     return sendRequest(`${BASE_URL}/${noteId}`, 'DELETE')
 }
 
-//this function isn't used in sei cafe - just a reminder of RESTful routing
 export function getById(noteId) {
     return sendRequest(`${BASE_URL}/${noteId}`);
+}
+
+export function updateDream(id, editedText) {
+    return sendRequest(`${BASE_URL}/${id}`, 'PUT', editedText)
 }

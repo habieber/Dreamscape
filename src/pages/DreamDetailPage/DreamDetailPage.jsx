@@ -4,8 +4,10 @@ import * as notesAPI from '../../utilities/notes-api';
 
 export default function DreamDetailPage({ user }) {
     const [dream, setDream] = useState(null);
+    const [editMode, setEditMode] = useState(false);
+    const [editedText, setEditedText] = useState('')
     let { id } = useParams()
-    console.log(id)
+    
 
     console.log(dream)
     useEffect(() => {
@@ -13,6 +15,7 @@ export default function DreamDetailPage({ user }) {
             try {
                 const fetchedDream = await notesAPI.getById(id);
                 setDream(fetchedDream);
+                setEditedText(fetchedDream.text);
             } catch (error) {
                 console.error('Error fetching dream:', error);
             }
@@ -24,16 +27,45 @@ export default function DreamDetailPage({ user }) {
         
     }, [id]);
 
+    function handleEdit() {
+        setEditMode(true);
+    }
+
+    async function handleSave() {
+        try {
+            await notesAPI.updateDream(id, {editedText})
+            setDream(prevDream => ({
+                ...prevDream,
+                text: editedText
+            }));
+            setEditMode(false);
+        } catch (err) {
+            console.error('Error updating dream:', err)
+        }
+    }
+
+    function handleCancel() {
+        setEditMode(false);
+    }
+
     return (
         <div>
             <h2>{user.name}'s Dream Details</h2>
-            {dream ? (
+            {dream && !editMode ? (
                 <>
                     <p>Description: {dream.text}</p>
                     <p>Created At: {dream.createdAt}</p>
+                    <button onClick={handleEdit}>Edit</button>
+
                 </>
             ) : (
-                <p></p>
+                editMode ? (
+                    <>
+                        <textarea value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+                        <button onClick={handleSave}>Save</button>
+                        <button onClick={handleCancel}>Cancel</button>
+                    </>
+                ) : null
             )}
         </div>
     );
