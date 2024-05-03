@@ -1,9 +1,9 @@
-import './AllNotesPage.css';
+import './AllDreamsPage.css';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
 import * as notesAPI from '../../utilities/notes-api'
 
-export default function AllNotesPage ({ user }) {
+export default function AllDreamsPage ({ user }) {
     const [text, setText] = useState({text: ''});
     const [allNotes, setAllNotes] = useState([]);
 
@@ -62,7 +62,8 @@ export default function AllNotesPage ({ user }) {
                         {allNotes.map(note => (
                             <li key={note._id}> 
                                 <div className="flex items-center justify-between"> {/* Wrap buttons with flex container */}
-                                    <span className='text-white'>{formatDate(note.createdAt)}: {note.text}</span> 
+                                    <span>{formatDate(note.createdAt)}</span>
+                                    <span className='text-white'>{note.text}</span> 
                                     <div>
                                         <button className='rounded-full'><Link to={`/${note._id}`}>Details</Link></button>
                                         <button className='rounded-full' onClick={() => handleDeleteNote(note._id)}>Delete</button>
