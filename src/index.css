@@ -4,11 +4,11 @@
 
 :root {
   --blue-grey: rgb(107, 112, 109);
-  --plum: #5d3e50;
+  --plum: rgb(93, 62, 80, .9);
   --tan: #E7E2DD;
   --primary-dark: #282144;
   --primary-light: #66599b;
-  --text-light: #968c84;
+  --text-light: #d1cecc;
   --text-dark: #615954;
   --test-bg: rgba(40, 33, 68, 0.3);
 }
@@ -19,15 +19,15 @@
   }
 
   body {
-    @apply font-[Helvetica]
+    @apply font-[Helvetica] text-white
   }
 
   li {
-    @apply p-4 text-sm
+    @apply p-4 text-lg
   }
 
   button {
-    @apply px-4 py-2 border bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white
+    @apply px-4 py-2 border bg-gradient-to-r from-[var(--plum)] to-[var(--primary-light)] text-white
   }
 
   h1 {
@@ -35,13 +35,13 @@
   }
 }
 
-/* *, *:before, *:after {
-  box-sizing: border-box;
-} */
-
 body {
   background-color: var(--test-bg);
-  /* height: 100vh; */
+  background-image: url("https://images.pexels.com/photos/2291873/pexels-photo-2291873.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 15px;
 }
 
 
@@ -49,8 +49,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3vmin;
-  background-color: var(--plum);
+  background-color: rgba(102, 96, 99, 0.5);
   border: .1vmin;
   border-radius: 1vmin;
   width: 70vh;
@@ -68,12 +67,6 @@ form {
   color: var(--text-light);
 }
 
-/* label {
-  font-size: 2vmin;
-  display: flex;
-  align-items: center;
-} */
-
 input {
   padding: 5vmin;
   font-size: 2vmin;
@@ -89,7 +82,7 @@ input:focus {
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--white);
+  color: var(--text-light);
   background-color: var(--primary-light);
   font-size: 2vmin;
   font-weight: bold;

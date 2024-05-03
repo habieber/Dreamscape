@@ -1,7 +1,7 @@
 .App {
-  /* text-align: center; */
-  background-image: url("https://media.istockphoto.com/id/480798670/photo/spiral-galaxy-illustration-of-milky-way.jpg?s=612x612&w=0&k=20&c=MLE2w9wM03YDWsk20Sd1-Pz4xdHDMc-8_v4Ar1JhiaQ=");
-  background-size: cover; /* Ensures the background image covers the entire body */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  /* background-image: url("https://media.istockphoto.com/id/480798670/photo/spiral-galaxy-illustration-of-milky-way.jpg?s=612x612&w=0&k=20&c=MLE2w9wM03YDWsk20Sd1-Pz4xdHDMc-8_v4Ar1JhiaQ=");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  padding-top: 15px; */
 }

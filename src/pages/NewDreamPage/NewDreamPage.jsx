@@ -34,8 +34,9 @@ export default function NewDreamPage ({ user }) {
     
     return (
         <>
+        <div className='dream-container'>
             <div className='ai-image-generator'>
-                <div className="header">Dreamscape Image <span>Generator</span></div>
+                <div className="header">Dream Generator</div>
                 <div className='img-loading'>
                     <div className="image"><img src={image_url === '/' ? default_img : image_url} alt="..." /></div>
                     <div className="loading">
@@ -49,6 +50,8 @@ export default function NewDreamPage ({ user }) {
                     </div>
                 </div>
             </div>
+        </div>
+
         </>
 
     )

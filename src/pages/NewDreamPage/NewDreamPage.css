@@ -6,14 +6,19 @@
     color: white;
 }
 
+.dream-container {
+    padding-top: 7vh;
+    background-color: rgba(102, 96, 99, 0.5);
+    width: 80vh;
+    margin: auto;
+    margin-top: 8vh;
+    padding-top: 5vh;
+}
+
 .header {
     font-size: 70px;
     font-weight: 500;
     padding-bottom: 30px;
-}
-
-.header span {
-    color: pink;
 }
 
 .img-loading {
@@ -36,7 +41,7 @@
 
 .search-box {
     display: flex;
-    width: 1000px;
+    width: 75vh;
     height: 95px;
     justify-content: space-around;
     align-items: center;
@@ -65,8 +70,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 85px;
+    width: 30vh;
+    height: 95px;
     font-size: 20px;
     border-radius: 50px;
     background-color: #5d3e50;

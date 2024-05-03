@@ -48,13 +48,18 @@ export default function DreamDetailPage({ user }) {
         setEditMode(false);
     }
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear().toString().substr(-2)}`;
+    };
+
     return (
-        <div>
-            <h2>{user.name}'s Dream Details</h2>
+        <div className='form-container'>
+            <h2 className='text-xl'>Dream Details</h2>
             {dream && !editMode ? (
                 <>
+                    <p>{formatDate(dream.createdAt)}</p>
                     <p>Description: {dream.text}</p>
-                    <p>Created At: {dream.createdAt}</p>
                     <button onClick={handleEdit}>Edit</button>
 
                 </>

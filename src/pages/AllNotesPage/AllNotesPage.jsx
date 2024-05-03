@@ -40,28 +40,33 @@ export default function AllNotesPage ({ user }) {
         }
     }
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear().toString().substr(-2)}`;
+    };
+
     return (
         <>
-            <div className='form-container'>
+            <div className='form-container md:container md:mx-auto px-4'>
                 <form onSubmit={handleAddNote}>
                     <input type="text" name="text" value={text.text} onChange={handleChange} />
                     <button className='button btn-sm' type="submit">Add Note</button>
                 </form>
             </div>
-            <hr />
-            <div className='form-container'>
+            <hr className='divider'/>
+            <div className='form-container md:container md:mx-auto px-4'>
                 <h1>{user.name}'s Dreams</h1>
                 {allNotes.length ?
                     <ul>
                         {allNotes.map(note => (
-                            <li key={note._id}>{note.createdAt}: {note.text} 
+                            <li key={note._id}>{formatDate(note.createdAt)}: {note.text} 
                             <button><Link to={`/${note._id}`}>Details</Link></button>
                             <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
                             </li>
                         ))}
                     </ul>
                     :
-                    <p>No notes available.</p>
+                    <p>No dreams available.</p>
                 }            
             </div>         
 

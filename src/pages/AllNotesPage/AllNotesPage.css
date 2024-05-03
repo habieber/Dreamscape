@@ -4,5 +4,12 @@
    align-items: center;
    justify-content: center;
    padding: 10vh;
-   color: white;
+   margin: auto;
+   margin-top: 8vh;
+   width: 70vh;
+}
+
+.divider {
+   padding-top: 2vh;
+   margin-top: 7vh;
 }

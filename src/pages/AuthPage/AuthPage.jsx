@@ -4,11 +4,16 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 
 export default function AuthPage ({ setUser }) {
     return (
-        <main>
-            <h1>Welcome to Quick Notes</h1>
-            <h3>Sign Up Or Log In to View & Create Notes</h3>
+        <>
+            <div className="flex justify-center items-start">
+                <h1 className="text-center">Welcome to Dreamscape</h1>
+            </div>
+            <div>
+                <h2 className="text-center text-white">Log In or Sign Up to See Your Dreams</h2>
+            </div>
             <SignUpForm setUser={setUser} />
             <LoginForm setUser={setUser}/>
-        </main>
+        </>
+
     )
 }
