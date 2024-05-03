@@ -53,6 +53,10 @@ body {
   border: .1vmin;
   border-radius: 1vmin;
   width: 70vh;
+  padding-top: 7vh;
+  background-color: rgba(102, 96, 99, 0.5);
+  width: 80vh;
+  margin-top: 8vh;
 }
 
 p.error-message {

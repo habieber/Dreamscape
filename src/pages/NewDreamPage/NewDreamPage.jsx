@@ -34,7 +34,7 @@ export default function NewDreamPage ({ user }) {
     
     return (
         <>
-        <div className='dream-container'>
+        <div className='form-container'>
             <div className='ai-image-generator'>
                 <div className="header">Dream Generator</div>
                 <div className='img-loading'>

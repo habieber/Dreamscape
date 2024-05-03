@@ -6,7 +6,7 @@
     color: white;
 }
 
-.dream-container {
+.form-container {
     padding-top: 7vh;
     background-color: rgba(102, 96, 99, 0.5);
     width: 80vh;
@@ -16,7 +16,7 @@
 }
 
 .header {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 500;
     padding-bottom: 30px;
 }

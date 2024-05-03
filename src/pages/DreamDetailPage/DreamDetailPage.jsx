@@ -55,7 +55,7 @@ export default function DreamDetailPage({ user }) {
 
     return (
         <div className='form-container'>
-            <h2 className='text-xl'>Dream Details</h2>
+            <h2 className='header'>Dream Details</h2>
             {dream && !editMode ? (
                 <>
                     <p>{formatDate(dream.createdAt)}</p>

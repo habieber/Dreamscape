@@ -48,20 +48,26 @@ export default function AllNotesPage ({ user }) {
     return (
         <>
             <div className='form-container md:container md:mx-auto px-4'>
+                <div className='header'>Describe A Dream</div>
                 <form onSubmit={handleAddNote}>
                     <input type="text" name="text" value={text.text} onChange={handleChange} />
-                    <button className='button btn-sm' type="submit">Add Note</button>
+                    <button className='button btn-sm' type="submit">Save Dream</button>
                 </form>
             </div>
             <hr className='divider'/>
             <div className='form-container md:container md:mx-auto px-4'>
-                <h1>{user.name}'s Dreams</h1>
+                <h1 className='header'>{user.name}'s Dream Journal</h1>
                 {allNotes.length ?
                     <ul>
                         {allNotes.map(note => (
-                            <li key={note._id}>{formatDate(note.createdAt)}: {note.text} 
-                            <button><Link to={`/${note._id}`}>Details</Link></button>
-                            <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                            <li key={note._id}> 
+                                <div className="flex items-center justify-between"> {/* Wrap buttons with flex container */}
+                                    <span className='text-white'>{formatDate(note.createdAt)}: {note.text}</span> 
+                                    <div>
+                                        <button><Link to={`/${note._id}`}>Details</Link></button>
+                                        <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                                    </div>
+                                </div>
                             </li>
                         ))}
                     </ul>
