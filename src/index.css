@@ -85,17 +85,7 @@ input:focus {
 
 button, a.button {
   margin: 1vmin;
-  padding: 1vmin;
   color: var(--text-light);
-  background-color: var(--primary-light);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--tan);
-  border-radius: .5vmin;
-  outline: none;
-  cursor: pointer;
 }
 
 h1 {

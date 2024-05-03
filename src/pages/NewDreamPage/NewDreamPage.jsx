@@ -30,6 +30,7 @@ export default function NewDreamPage ({ user }) {
         }
         const text = inputRef.current.value
         const addDream = await notesAPI.addNote({text})
+
     }
     
     return (
@@ -43,10 +44,12 @@ export default function NewDreamPage ({ user }) {
                         <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
                         <div className={loading ? "loading-text" : "display-none"}>Loading...</div>
                     </div>
-                    <div className={image_url === '/' ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</div>
+                    <div className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</div>
                     <div className="search-box">
                         <input type="text" ref={inputRef} className='search-input' placeholder='describe your dream' />
-                        <div className='generate-btn' onClick={()=>{imageGenerator()}}>Generate</div>
+                        <div className='generate-btn' onClick={()=>{imageGenerator()}}>
+                            {image_url === '/' ? 'Generate' : 'Re-generate'}
+                        </div>
                     </div>
                 </div>
             </div>

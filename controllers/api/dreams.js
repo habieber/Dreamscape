@@ -18,12 +18,12 @@ const openai = new OpenAI({
 async function getImage(req, res) {
     try {
         console.log(req.body.prompt)
-        // const response = await openai.images.generate({
-        //     prompt: req.body.prompt,
-        //     n:1,
-        //     size: "512x512"
-        // })     
-        // res.json(response)   
+        const response = await openai.images.generate({
+            prompt: req.body.prompt,
+            n:1,
+            size: "512x512"
+        })     
+        res.json(response)   
     } catch (err) {
         res.status(400).json(err)
     }

@@ -8,8 +8,6 @@ export default function NavBar({ user, setUser }) {
   const [nav, setNav] = useState(false)
 
   const handleNav = () => {
-    console.log('handlenav')
-    console.log(nav)
     setNav(!nav)
   }
 
@@ -23,6 +21,17 @@ export default function NavBar({ user, setUser }) {
       <div className="w-full min-h-[15px] flex justify-between items-center absolute z-10 text-white bg-gray-700/80">
         <div className="flex items-center">
           <ul className="hidden sm:flex px-4">
+            {!user && (
+              <>
+                <li className="text-2xl py8">
+                  <Link to="/new">Home</Link>
+                </li>
+                <li className="text-2xl py8">
+                  <Link to="/">Sign In</Link>
+                </li>
+              </>
+            )}
+
             {user && (
               <>
                 <li>
@@ -39,7 +48,7 @@ export default function NavBar({ user, setUser }) {
         <div className="hidden sm:flex px-4 flex items-center">
           {user && (
             <>
-              <span>Hello, {user}</span>
+              <span>Hello, {user.name}</span>
               <Link to="" onClick={handleLogOut} className="px-4">Log Out</Link>
             </>
           )}
@@ -53,18 +62,35 @@ export default function NavBar({ user, setUser }) {
         className={nav ? 'overflow-y-hidden md:hidden ease-in duration-300 absolute text-gray-300 left-0 top-0 w-full h-screen bg-gray-700/80 px-4 py-7 flex flex-col' 
         : 'absolute top-0 h-screen left-[-100%] ease-in duration-500 '}>
           <ul className="h-full w-full text-center pt-12">
-            <li className="text-2xl py8">
-              <a href="/">Home</a>
-            </li>
-            <li className="text-2xl py8">
-              <a href="#index">My Dreams</a>
-            </li>
-            <li className="text-2xl py8">
-              <a href="/">New Dream</a>
-            </li>
-            <li className="text-2xl py8">
-              <a href="/">Logout</a>
-            </li>
+            {user && (
+              <>
+              <li className="text-2xl py8">
+                <Link to="/new">Home</Link>
+              </li>
+              <li className="text-2xl py8">
+                <Link to="/">My Dreams</Link>
+              </li>
+              <li className="text-2xl py8">
+                <Link to="/new">New Dream</Link>
+              </li>
+              <li className="text-2xl py8">
+                <Link to="" onClick={handleLogOut} className="px-4">Log Out</Link>
+              </li>
+              </>
+            )}
+
+            {!user && (
+              <>
+              <li className="text-2xl py8">
+                <Link to="/new">Home</Link>
+              </li>
+              <li className="text-2xl py8">
+                <Link to="/">Sign In</Link>
+              </li>
+              </>
+            )}
+
+
           </ul>
         </div>
         

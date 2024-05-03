@@ -7,26 +7,28 @@ import { getUser } from '../../utilities/users-services'
 import AllNotesPage from '../AllNotesPage/AllNotesPage';
 import NewDreamPage from '../NewDreamPage/NewDreamPage';
 import DreamDetailPage from '../DreamDetailPage/DreamDetailPage'
-import Hero from '../../components/Hero/Hero';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   return (
     
     <main className="App">
-      { user ?
-        <>
-          <NavBar user={user.name} setUser={setUser}/>
-          <Routes>
+      <NavBar user={user} setUser={setUser}/>
+      <Routes>
+        {user ? (
+          <>
             <Route path="/" element={<AllNotesPage user={user} />} />
             <Route path="/new" element={<NewDreamPage user={user} />} />
             <Route path="/:id" element={<DreamDetailPage user={user} />} />
-          </Routes>
-        </>
-        :
-        <AuthPage setUser={setUser} />
-      }
-      <Hero />
+          </>
+        ) : (
+          <>
+          <Route path="/" element={<AuthPage setUser={setUser} />} />
+          <Route path="/new" element={<NewDreamPage/>} />
+          </>
+       
+        )}
+      </Routes>
     </main>
     
   );

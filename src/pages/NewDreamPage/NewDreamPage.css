@@ -8,11 +8,12 @@
 
 .form-container {
     padding-top: 7vh;
-    background-color: rgba(102, 96, 99, 0.5);
+    background-color: rgb(55, 65, 81, .8);
     width: 80vh;
     margin: auto;
     margin-top: 8vh;
     padding-top: 5vh;
+    margin-bottom: 4vh;
 }
 
 .header {

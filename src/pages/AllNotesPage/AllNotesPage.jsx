@@ -51,7 +51,7 @@ export default function AllNotesPage ({ user }) {
                 <div className='header'>Describe A Dream</div>
                 <form onSubmit={handleAddNote}>
                     <input type="text" name="text" value={text.text} onChange={handleChange} />
-                    <button className='button btn-sm' type="submit">Save Dream</button>
+                    <button className='rounded-full' type="submit">Save Dream</button>
                 </form>
             </div>
             <hr className='divider'/>
@@ -64,8 +64,8 @@ export default function AllNotesPage ({ user }) {
                                 <div className="flex items-center justify-between"> {/* Wrap buttons with flex container */}
                                     <span className='text-white'>{formatDate(note.createdAt)}: {note.text}</span> 
                                     <div>
-                                        <button><Link to={`/${note._id}`}>Details</Link></button>
-                                        <button onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                                        <button className='rounded-full'><Link to={`/${note._id}`}>Details</Link></button>
+                                        <button className='rounded-full' onClick={() => handleDeleteNote(note._id)}>Delete</button>
                                     </div>
                                 </div>
                             </li>
