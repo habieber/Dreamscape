@@ -61,7 +61,7 @@ export default function AllDreamsPage ({ user }) {
                     <ul>
                         {allNotes.map(note => (
                             <li key={note._id}> 
-                                <div className="flex items-center justify-between"> {/* Wrap buttons with flex container */}
+                                <div className="flex items-center justify-between">
                                     <span>{formatDate(note.createdAt)}</span>
                                     <span className='text-white'>{note.text}</span> 
                                     <div>

@@ -18,10 +18,12 @@ const openai = new OpenAI({
 async function getImage(req, res) {
     try {
         console.log(req.body.prompt)
+        const dreamPrompt = `Generate an image that depicts the following account as a dream: ${req.body.prompt}`;
         const response = await openai.images.generate({
-            prompt: req.body.prompt,
+            prompt: dreamPrompt,
             n:1,
-            size: "512x512"
+            size: "512x512",
+            style: "vivid",
         })     
         res.json(response)   
     } catch (err) {
