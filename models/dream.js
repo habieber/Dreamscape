@@ -6,7 +6,9 @@ const dreamSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true}
+        required: true
+    },
+    image: {type: String, default: ''}
 }, {
     timestamps: true,
 });

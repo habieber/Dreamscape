@@ -20,14 +20,19 @@ async function getImage(req, res) {
         console.log(req.body.prompt)
         const dreamPrompt = `Generate an image that depicts the following account as a dream: ${req.body.prompt}`;
         const response = await openai.images.generate({
+            model: "dall-e-3",
             prompt: dreamPrompt,
-            n:1,
-            size: "512x512",
-            style: "vivid",
-        })     
+            n: 1,
+            size: "1024x1024",
+          });
         res.json(response)   
-    } catch (err) {
-        res.status(400).json(err)
+    } catch (error) {
+        if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.data);
+        } else {
+            console.log(error.message);
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import * as notesAPI from '../../utilities/notes-api'
 import './NewDreamPage.css'
 
@@ -22,6 +22,7 @@ export default function NewDreamPage ({ user }) {
         console.log(data)
         setImage_url(data)
         setLoading(false)
+
     }
 
     async function handleSaveDream() {
@@ -31,6 +32,38 @@ export default function NewDreamPage ({ user }) {
         const text = inputRef.current.value
         const addDream = await notesAPI.addNote({text})
 
+    }
+
+    async function handleSaveDreamImage() {
+        try {
+            if (inputRef.current.value === '') {
+                return;
+            }
+            
+            // Convert image_url to base64
+            const base64Image = await convertImageUrlToBase64(image_url);
+    
+            const text = inputRef.current.value;
+            await notesAPI.addNote({ text });
+            // image: base64Image -----> add this in after figuring out base64 conversion
+    
+            // Clear input field and reset image_url
+            inputRef.current.value = '';
+            setImage_url('/');
+        } catch (error) {
+            console.error('Error saving dream text and image:', error);
+        }
+    }
+    
+    async function convertImageUrlToBase64(url) {
+        // const response = await fetch(url);
+        // const blob = await response.blob();
+        // return new Promise((resolve, reject) => {
+        //     const reader = new FileReader();
+        //     reader.onloadend = () => resolve(reader.result);
+        //     reader.onerror = reject;
+        //     reader.readAsDataURL(blob);
+        // });
     }
     
     return (
@@ -45,6 +78,8 @@ export default function NewDreamPage ({ user }) {
                         <div className={loading ? "loading-text" : "display-none"}>Loading...</div>
                     </div>
                     <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</button>
+                    <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDreamImage())}>Save Dream Text & Image</button>
+
                     <br />
                     <div className="search-box">
                         <input type="text" ref={inputRef} className='search-input' placeholder='describe your dream' />
