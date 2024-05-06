@@ -55,20 +55,19 @@ export default function DreamDetailPage({ user }) {
 
     return (
         <div className='form-container'>
-            <h2 className='header'>Dream Details</h2>
             {dream && !editMode ? (
                 <>
-                    <p>{formatDate(dream.createdAt)}</p>
+                    <h2 className='header'>{formatDate(dream.createdAt)}</h2>
                     <p>Description: {dream.text}</p>
-                    <button onClick={handleEdit}>Edit</button>
-
+                    <button className='rounded-full' onClick={handleEdit}>Edit</button>
                 </>
             ) : (
                 editMode ? (
                     <>
-                        <textarea value={editedText} onChange={(e) => setEditedText(e.target.value)} />
-                        <button onClick={handleSave}>Save</button>
-                        <button onClick={handleCancel}>Cancel</button>
+                        <h2 className='header'>Edit Dream From {formatDate(dream.createdAt)}</h2>
+                        <textarea className="rounded-lg border border-gray-300 p-2 h-40 w-1/2 text-black" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+                        <button className='rounded-full' onClick={handleSave}>Save</button>
+                        <button className='rounded-full' onClick={handleCancel}>Cancel</button>
                     </>
                 ) : null
             )}

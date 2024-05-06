@@ -30,41 +30,44 @@ export default function NewDreamPage ({ user }) {
             return 0;
         }
         const text = inputRef.current.value
-        const addDream = await notesAPI.addNote({text})
+        const addDream = await notesAPI.addNote({text: text, image: image_url})
 
     }
 
     async function handleSaveDreamImage() {
-        try {
-            if (inputRef.current.value === '') {
-                return;
-            }
+        // try {
+        //     if (inputRef.current.value === '') {
+        //         return;
+        //     }
             
-            // Convert image_url to base64
-            const base64Image = await convertImageUrlToBase64(image_url);
+        //     // Convert image_url to base64
+        //     const base64Image = await convertImageUrlToBase64(image_url);
     
-            const text = inputRef.current.value;
-            await notesAPI.addNote({ text });
-            // image: base64Image -----> add this in after figuring out base64 conversion
+        //     const text = inputRef.current.value;
+        //     await notesAPI.addNote({ text: text, image: base64Image });
+        //     // image: base64Image -----> this was added to also send the image data
     
-            // Clear input field and reset image_url
-            inputRef.current.value = '';
-            setImage_url('/');
-        } catch (error) {
-            console.error('Error saving dream text and image:', error);
-        }
+        //     // Clear input field and reset image_url
+        //     inputRef.current.value = '';
+        //     setImage_url('/');
+        // } catch (error) {
+        //     console.error('Error saving dream text and image:', error);
+        // }
     }
     
-    async function convertImageUrlToBase64(url) {
-        // const response = await fetch(url);
+    async function convertImageUrlToBase64(image_url) {
+        // const response = await notesAPI.fetchImage(image_url);
         // const blob = await response.blob();
+
+        // const jpegBlob = new Blob([blob], { type: 'image/jpeg' });
         // return new Promise((resolve, reject) => {
         //     const reader = new FileReader();
         //     reader.onloadend = () => resolve(reader.result);
         //     reader.onerror = reject;
-        //     reader.readAsDataURL(blob);
+        //     reader.readAsDataURL(jpegBlob);
         // });
     }
+
     
     return (
         <>
@@ -78,11 +81,11 @@ export default function NewDreamPage ({ user }) {
                         <div className={loading ? "loading-text" : "display-none"}>Loading...</div>
                     </div>
                     <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</button>
-                    <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDreamImage())}>Save Dream Text & Image</button>
+                    {/* <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDreamImage())}>Save Dream Text & Image</button> */}
 
                     <br />
                     <div className="search-box">
-                        <input type="text" ref={inputRef} className='search-input' placeholder='describe your dream' />
+                        <textarea type="text" ref={inputRef} className='search-input' placeholder='describe your dream' />
                         <button className='generate-btn' onClick={()=>{imageGenerator()}}>
                             {image_url === '/' ? 'Generate' : 'Re-generate'}
                         </button>

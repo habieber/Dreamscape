@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dreamsCtrl = require('../../controllers/api/dreams');
+const { BsFillRouterFill } = require('react-icons/bs');
 
 // POST /api/dreams
 router.post('/', dreamsCtrl.create);
