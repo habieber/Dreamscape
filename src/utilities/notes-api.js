@@ -26,6 +26,6 @@ export function updateDream(id, editedText) {
     return sendRequest(`${BASE_URL}/${id}`, 'PUT', editedText)
 }
 
-export async function fetchImage(image_url) {
-    return sendRequest(`${BASE_URL}/convert`, 'POST', image_url)
-}
+// export async function fetchImage(image_url) {
+//     return sendRequest(`${BASE_URL}/convert`, 'POST', image_url)
+// }

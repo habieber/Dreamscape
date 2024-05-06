@@ -51,18 +51,20 @@ export default function AllDreamsPage ({ user }) {
                 <h1 className='header'>{user.name}'s Dream Journal</h1>
                 {allNotes.length ?
                     <ul>
-                        {allNotes.map(note => (
-                            <li key={note._id}> 
-                                <div className="flex items-center justify-between">
-                                    <span>{formatDate(note.createdAt)}</span>
-                                    <span className='text-white'>{note.text}</span>
-                                    <div>
-                                        <button className='rounded-full'><Link to={`/${note._id}`}>Details</Link></button>
-                                        <button className='rounded-full' onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                        {allNotes
+                            .filter(note => note.user === user._id) // Filter notes by user ID
+                            .map(note => (
+                                <li key={note._id}> 
+                                    <div className="flex items-center justify-between">
+                                        <span>{formatDate(note.createdAt)}</span>
+                                        <span className='text-white'>{note.text}</span>
+                                        <div>
+                                            <button className='rounded-full'><Link to={`/${note._id}`}>Details</Link></button>
+                                            <button className='rounded-full' onClick={() => handleDeleteNote(note._id)}>Delete</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr />
-                            </li>
+                                    <hr />
+                                </li>
                         ))}
                     </ul>
                     :

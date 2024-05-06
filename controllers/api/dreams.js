@@ -61,7 +61,9 @@ async function deleteDream(req, res) {
 }
 
 async function index(req, res) {
-    const dreams = await Dream.find({})
+    console.log(req.user)
+    const dreams = await Dream.find({'user': req.user._id})
+    console.log(dreams)
     res.json(dreams)
 }
 
