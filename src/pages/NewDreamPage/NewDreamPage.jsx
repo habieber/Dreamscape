@@ -76,7 +76,7 @@ export default function NewDreamPage ({ user }) {
             {user ? (
                 <div className='form-container'>
                     <div className='ai-image-generator'>
-                        <div className="header title">Dreamcape</div>
+                        <div className="header title">Dreamscape</div>
                         <div className='subtitle'>Dream Generator</div>
                         <div className='img-loading'>
                             <div className="image"><img src={image_url === '/' ? default_img : image_url} alt="..." /></div>
