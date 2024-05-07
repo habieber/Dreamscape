@@ -13,10 +13,10 @@ But that's just the beginning. With our cutting-edge AI technology, Dreamscape b
 
 Whether you're a seasoned dreamer seeking deeper insights or simply curious about the inner workings of your mind, Dreamscape empowers you to delve into the rich tapestry of your dreams like never before. Join us on this journey of self-discovery and unlock the secrets hidden within your subconscious mind.
 
-
+[![LinkedIn Badge](https://img.shields.io/badge/-@hbieber-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/holly-bieber/)
   </div>
 
-# Screenshots
+ # :camera_flash: Screenshots 
 
 <img src="/ImageGen.png">
 <img src="/ImageGenHome.png">
