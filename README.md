@@ -1,4 +1,7 @@
-# Dreamscape
+  <div id="description" align="center">
+
+  # Dreamscape
+
 <div id="header" align="center">
 
   <img src="/Dreamscape.png">
@@ -11,12 +14,14 @@ But that's just the beginning. With our cutting-edge AI technology, Dreamscape b
 Whether you're a seasoned dreamer seeking deeper insights or simply curious about the inner workings of your mind, Dreamscape empowers you to delve into the rich tapestry of your dreams like never before. Join us on this journey of self-discovery and unlock the secrets hidden within your subconscious mind.
 
 
+  </div>
+
 # Screenshots
 
 <img src="/ImageGen.png">
-<img src="/Dream-Read-Search.png">
-<img src="/Dream-Read-Add.png">
-<img src="/Dream-Read-Shelf.png">
+<img src="/ImageGenHome.png">
+<img src="/DreamExample.png">
+<img src="/Index.png">
 
 # Technologies Used
 
@@ -24,8 +29,8 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 - Express JS
 - MongoDB
 - Mongoose
-- OAuth
-- Google Books API
+- React
+- OpenAI Image Generation API
 - HTML
 - CSS
 - Trello
@@ -34,15 +39,12 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 
 # Getting Started
 
-[Click to Use Dream Read!](https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/)
+[Click to Use Dreamscape!](https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/)
 
 [Click to View Project Planning on Trello](https://trello.com/b/XKlmD1PJ/project-4)
 
 # Next Steps
 
-- Implement a filter feature to access books on your shelf more easily
-- Add a feature to adjust priority immediately when saving books to your shelf from API search
-- Add a feature to upload your own cover photo for custom book entries
-- Add a feature to categorize books with custom categories (personal, work, book club, etc)
-- Add more styling to each page for more intuitive navigation (links to different pages)
-- Addd drag and drop feature to reorganize your bookshelf
+- Implement a voice to text feature of transcribing voice memos of dream descriptions
+- Implement feature for saving generated dream images directly in app
+- Add functionality for sharing your dream images on social media platforms
