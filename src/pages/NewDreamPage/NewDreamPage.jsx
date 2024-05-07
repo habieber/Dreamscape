@@ -1,12 +1,13 @@
 import { useState, useRef } from 'react';
 import * as notesAPI from '../../utilities/notes-api'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './NewDreamPage.css'
 
 export default function NewDreamPage ({ user }) {
     const [image_url, setImage_url] = useState('/')
     let inputRef = useRef(null)
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate();
 
     const default_img = 'https://th.bing.com/th/id/OIG3.mrzboNyzN9SAtffiVH46?w=270&h=270&c=6&r=0&o=5&pid=ImgGn'
 
@@ -31,6 +32,7 @@ export default function NewDreamPage ({ user }) {
         }
         const text = inputRef.current.value
         const addDream = await notesAPI.addNote({text: text, image: image_url})
+        navigate('/')
 
     }
 
