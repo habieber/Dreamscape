@@ -3,6 +3,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 import { getUser } from '../../utilities/users-services'
 import AllDreamsPage from '../AllDreamsPage/AllDreamsPage';
 import NewDreamPage from '../NewDreamPage/NewDreamPage';
@@ -29,6 +30,7 @@ export default function App() {
        
         )}
       </Routes>
+      <Footer/>
     </main>
     
   );

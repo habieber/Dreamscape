@@ -99,8 +99,8 @@ export default function NewDreamPage ({ user }) {
             ) : (
                 <div className='form-container'>
                     <div className='header'>
-                        <h1 className='text-4xl text-center'>Welcome to</h1>
-                        <h1 className='text-5xl text-center'>Dreamscape</h1>
+                        <h1 className='text-xl text-center'>Welcome to</h1>
+                        <h1 className='text-5xl text-center title'>Dreamscape</h1>
                         <span className='text-xl'>Your personal portal to the realm of dreams</span>
                     </div>
                     <div className='info text-lg text-center'>

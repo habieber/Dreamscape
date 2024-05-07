@@ -4,7 +4,7 @@
 
 :root {
   --blue-grey: rgb(107, 112, 109);
-  --plum: rgb(93, 62, 80, .9);
+  --plum: rgba(128, 91, 112, 0.9);
   --tan: #E7E2DD;
   --primary-dark: #282144;
   --primary-light: #66599b;
@@ -30,9 +30,14 @@
     @apply px-4 py-2 border bg-gradient-to-r from-[var(--plum)] to-[var(--primary-light)] text-white
   }
 
+  .title {
+    @apply bg-gradient-to-r from-[var(--plum)] to-[var(--primary-light)] text-transparent bg-clip-text
+  }
+
   h1 {
     @apply text-xl font-bold
   }
+  
 }
 
 body {
@@ -95,4 +100,8 @@ h1 {
 ul {
   color: white;
   list-style-type: none;
+}
+
+span {
+  color: rgb(174, 142, 160);
 }
