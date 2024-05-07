@@ -1,7 +1,7 @@
 # Dreamscape
 <div id="header" align="center">
 
-  <img src="/DreamscapeBanner.png" width="800" height="400">
+  <img src="/Dreamscape.png" width="800" height="400">
 
 </div>
 Welcome to Dreamscape, your personal portal to the realm of dreams. Dive into the depths of your subconscious and explore the mysterious landscapes of your mind like never before. With Dreamscape, you can effortlessly capture and chronicle your most vivid dreams, preserving them for reflection and analysis.
