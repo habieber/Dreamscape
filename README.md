@@ -34,7 +34,7 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 
 # Getting Started
 
-[Click to Use Dream Read!](https://dream-read-95c5d3ae821f.herokuapp.com/)
+[Click to Use Dream Read!](https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/)
 
 [Click to View Project Planning on Trello](https://trello.com/b/XKlmD1PJ/project-4)
 
