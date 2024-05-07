@@ -76,14 +76,15 @@ export default function NewDreamPage ({ user }) {
             {user ? (
                 <div className='form-container'>
                     <div className='ai-image-generator'>
-                        <div className="header">Dream Geneator</div>
+                        <div className="header title">Dreamcape</div>
+                        <div className='subtitle'>Dream Generator</div>
                         <div className='img-loading'>
                             <div className="image"><img src={image_url === '/' ? default_img : image_url} alt="..." /></div>
                             <div className="loading">
                                 <div className={loading ? "loading-bar-full" : "loading-bar"}></div>
                                 <div className={loading ? "loading-text" : "display-none"}>Loading...</div>
                             </div>
-                            <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDream())}>Save Dream Text</button>
+                            <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn mb-10"} onClick={()=>(handleSaveDream())}>Save Dream Text</button>
                             {/* <button className={(!user || image_url === '/') ? 'display-none' : "generate-btn"} onClick={()=>(handleSaveDreamImage())}>Save Dream Text & Image</button> */}
     
                             <br />

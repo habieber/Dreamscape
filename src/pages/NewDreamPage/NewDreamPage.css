@@ -49,6 +49,7 @@
     border-radius: 50px;
     background-color: #4d4c4c;
     margin-bottom: 100px;
+    margin-top: -5vh;
 }
 
 .search-input {
@@ -114,4 +115,9 @@
 
 .info > p {
     margin-bottom: 5vh;
+}
+
+.subtitle {
+    margin-top: -4vh;
+    margin-bottom: 2vh;
 }
