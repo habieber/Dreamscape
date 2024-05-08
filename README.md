@@ -2,6 +2,8 @@
 
   # Dreamscape
 
+  [Click to Use Dreamscape](https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/)
+
 <div id="header" align="center">
 
   <img src="/Dreamscape.png">
@@ -49,9 +51,35 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 
 # :fire: Getting Started
 
-[Click to Use Dreamscape!](https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/)
+<details open>
+  <summary> How to Create a Dream Jounral Entry </summary>
+    1. Log in or sign up for a new account
+    2. Navigate to the "All Dreams" page
+    3. Scroll to the bottom and describe your dream in detail
+    4. Click "Save Dream"
+</details>
 
-[Click to View Project Planning on Trello](https://trello.com/b/XKlmD1PJ/project-4)
+<details>
+  <summary> How to Generate an Image of Your Dream </summary>
+    1. Log in or sign up for a new account
+    2. Navigate to the "New Dream" page
+    3. Describe your dream in as much detail as possible, be SPECIFIC!
+    4. Click "Generate" and watch your dream unfold before your eyes
+</details>
+
+<details open>
+  <summary> Trello Board </summary>
+  <a href="https://trello.com/b/XKlmD1PJ/project-4"
+    > https://trello.com/b/XKlmD1PJ/project-4 </a
+  >
+</details>
+
+<details open>
+  <summary> Deployed Link (Heroku) </summary>
+  <a href="https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/"
+    > https://dreamscape-journal-0cd7f6bbd432.herokuapp.com/new/</a
+  >
+</details>
 
 # :satellite: Upcoming Features
 
