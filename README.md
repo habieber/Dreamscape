@@ -83,6 +83,6 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 
 # :satellite: Upcoming Features
 
-- Implement a voice to text feature of transcribing voice memos of dream descriptions
-- Implement feature for saving generated dream images directly in app
-- Add functionality for sharing your dream images on social media platforms
+- [:x:] Implement a voice to text feature of transcribing voice memos of dream descriptions
+- [:x:]Implement feature for saving generated dream images directly in app
+- [:x:]Add functionality for sharing your dream images on social media platforms
