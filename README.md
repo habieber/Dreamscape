@@ -51,7 +51,7 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
 
 # :fire: Getting Started
 
-<details open>
+<details>
   <summary> How to Create a Dream Jounral Entry </summary>
     1. Log in or sign up for a new account
     2. Navigate to the "All Dreams" page
