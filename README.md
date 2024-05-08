@@ -39,6 +39,7 @@ Whether you're a seasoned dreamer seeking deeper insights or simply curious abou
   ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
   ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
   ![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
+  ![TailwindCSS](  https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
   ![Trello](https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello)
   ![Heroku](https://img.shields.io/badge/-Heroku-05122A?style=flat&logo=heroku)
   ![Canva](https://img.shields.io/badge/-Canva-05122A?style=flat&logo=canva)
